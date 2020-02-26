@@ -1,0 +1,18 @@
+syntax = "proto3";
+option java_multiple_files = true;
+
+package io.fgmachado.grpcserver.dto.grpc;
+
+message Customer {
+    string name = 1;
+    string legalIdentification = 2;
+}
+
+message Response {
+    bool success = 1;
+    string message = 2;
+}
+
+service CustomerService {
+    rpc add(Customer) returns (Response);
+}
